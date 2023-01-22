@@ -1,0 +1,13 @@
+su hduser
+cd /usr/local/hadoop/hadoop-2.7.2/sbin
+start-dfs.sh
+start-yarn.sh
+jps
+cd Desktop/
+mkdir inputdata
+cd inputdata/
+echo “Hai, Hello, How are you? How is your health?” >> hello.txt
+cat >> hello.txt
+hadoop fs –copyFromLocal /home/hduser/Desktop/inputdata/hello.txt /folder/hduser
+hadoop jar wordcount.jar/usr/local/hadoop/input/usr/local/hadoop/output
+hdfs dfs -rm -R /usr/local/hadoop/output
