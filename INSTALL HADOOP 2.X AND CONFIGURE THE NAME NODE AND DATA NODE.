@@ -1,0 +1,22 @@
+sudo nano ~/.bashrc
+cd /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/
+sudo nano hadoop-env.sh
+sudo mkdir –p /usr/local/hadoop_tmp/hdfs/namenode
+sudo mkdir –p /usr/local/hadoop_tmp/hdfs/datanode
+sudo chown –R hduser:hadoop /usr/local/hadoop_tmp
+sudo nano hdfs-site.xml
+sudo nano core-site.xml
+sudo nano yarn-site.xml
+cp /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/mapred-site.xml.template
+/usr/local/hadoop/hadoop-2.7.2/etc/hadoop/mapred-site.xml
+sudo nano mapred-site.xml
+cd /usr/local/hadoop/hadoop-2.7.2/bin
+hadoop namenode -format
+cd /usr/local/hadoop/hadoop-2.7.2/sbin
+start-dfs.sh
+start-yarn.sh
+jps
+stop-dfs.sh
+stop-yarn.sh
+
+
